@@ -19,7 +19,12 @@ def find_min_count(tokens, num):
             mins.append(token)
     return mins
     
-
+def tf(token, document):
+    counts = count_tokens(document)
+    f = counts[token]
+    topToken = find_top_k(document, 1)[0]
+    return 0.5 + 0.5 * (f/counts[topToken])
+    
 
 def main():
     tokens = ['A', 'B', 'C', 'A']
