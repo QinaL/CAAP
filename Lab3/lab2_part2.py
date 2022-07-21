@@ -81,18 +81,60 @@ def salient(d, D, T):
 
 
 def main():
-    tokens = ['A', 'B', 'C', 'A']
-    tokens2 = ['D', 'B', 'C', 'D', 'D', 'B', 'D', 'C', 'D', 'A']
-    count = count_tokens(tokens)
-    print(find_top_k(tokens2, 2))
-    print(find_min_count(tokens2, 2))
+    print("Running count_tokens(['A', 'B', 'C', 'A'])")
+    print(count_tokens(['A', 'B', 'C', 'A']))
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running find_top_k(['D', 'B', 'C', 'D', 'D', 'B', 'D', 'C', 'D', 'A'], 2)")
+    print(find_top_k(['D', 'B', 'C', 'D', 'D', 'B', 'D', 'C', 'D', 'A'], 2))
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running find_min_count(['D', 'B', 'C', 'D', 'D', 'B', 'D', 'C', 'D', 'A'], 2)")
+    print(find_min_count(['D', 'B', 'C', 'D', 'D', 'B', 'D', 'C', 'D', 'A'], 2))
+    print("DONE \n-----------------------------------------------\n")
+
+
     D = [['D', 'B', 'D', 'C', 'D', 'C', 'C'],
         ['D', 'A', 'A'],
-        ['D', 'B'], #our dummy tokens are just letters
+        ['D', 'B'], 
         []] 
+
+    print("Running tf('B', D[0])")
     print(tf('B', D[0]))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running tf('C', D[0])")
+    print(tf('C', D[0]))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running tf('D', D[0])")
+    print(tf('D', D[0]))
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running idf('A', D)")
     print(idf('A', D))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running idf('B', D)")
+    print(idf('B', D))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running idf('C', D)")
+    print(idf('C', D))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running idf('D', D)")
+    print(idf('D', D))
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running salient(D[0], D, 0.4)")
     print(salient(D[0], D, 0.4))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running salient(D[1], D, 0.4)")
+    print(salient(D[1], D, 0.4))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running salient(D[2], D, 0.4)")
+    print(salient(D[2], D, 0.4))
+    print("DONE \n-----------------------------------------------\n")
+    print("Running salient(D[3], D, 0.4)")
+    print(salient(D[3], D, 0.4))
+    print("DONE \n-----------------------------------------------\n")
+    
 
 if __name__ == "__main__":
     main()
