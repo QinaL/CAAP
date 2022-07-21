@@ -1,3 +1,10 @@
+'''
+Matthew Ondeyo, Daniel Luna, Qina Liu
+CAAP Computer Science
+Lab 3
+2022-07-26
+'''
+
 def get_complaints(filename , lim=50000):
     '''
     This function takes the file name of the complaint csv,
