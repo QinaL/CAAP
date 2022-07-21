@@ -16,6 +16,12 @@ def get_complaints(filename , lim=50000):
     return complaints
 
 def count_complaints_about(complaints, company_name):
+    '''
+    Takes a list of complaints (which are dictionaries) and counts how many of the
+    complaints are about the given company
+    Input: list of dictionaries, string
+    Return: int
+    '''
     count = 0
     for complaint in complaints:
         #print(complaint['Company'])
@@ -25,6 +31,12 @@ def count_complaints_about(complaints, company_name):
     return count
 
 def count_state_complaints(complaints):
+    '''
+    Takes a list of complaints (which are dictionaries) and returns a dictionary with the number 
+    of complains for each state
+    Input: list of dictionaries
+    Return: dictionary
+    '''
     by_state = {}
     for complaint in complaints:
         state = complaint['State']
@@ -41,3 +53,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
