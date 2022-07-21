@@ -46,10 +46,18 @@ def count_state_complaints(complaints):
     return by_state
 
 def main():
+    print("Testing get_compliaints(\"complaints.csv\"). Printing complaints[0]")
     complaints = get_complaints("complaints.csv")
     print(complaints[0])
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running count_complaints_about(complaints, 'EQUIFAX, INC.')")
     print(count_complaints_about(complaints, 'EQUIFAX, INC.'))
+    print("DONE \n-----------------------------------------------\n")
+
+    print("Running count_state_complaints(complaints)")
     print(count_state_complaints(complaints))
+    print("DONE \n-----------------------------------------------\n")
 
 if __name__ == "__main__":
     main()
