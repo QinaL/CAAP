@@ -10,7 +10,7 @@ fxn should ahve no side effect on data structure
 def median(oriData):
     data = sorted(oriData)
     if (len(data) % 2 == 0):
-        return (data[math.floor(len(data)/2)] + data[math.floor(len(data)/2)+1])/2
+        return (data[math.floor(len(data)/2)] + data[math.floor(len(data)/2)-1])/2
     else:
         return data[math.floor(len(data)/2)]
 
@@ -35,9 +35,15 @@ def std(data):
         totalDev += (value - m)**2
     return math.sqrt((totalDev)/len(data))
 
-print(median(data))
-print(data)
-print(max(data))
+def testing():
+    assert median([1,2,3]) == 2
+    assert median([100.0, 5.0, 4.0, 7.0]) == 6.0
+    assert mean([8, 100, 100, 50, 20]) == 55.6
+    assert max([2, 4, 5, 10903, 3, -1003]) == 10903
+    assert min([2, 4, 5, 10903, 3, -1003]) == -1003
+    assert std([10, 12, 23, 23, 16, 23, 21, 16]) == 4.898979485566356
+
+testing()
 
 dataLine = plt.plot(data, label='data')
 
@@ -56,4 +62,4 @@ plt.legend()
 
 #plt.legend([dataLine], ['data'])
 
-plt.show()
+#plt.show()
